@@ -263,10 +263,9 @@ div.chart {
 }
 
 .list {
-  height: 900px;
-  overflow: auto;
   background-color: #615a5a;
   padding: 15px;
+  width: 270px;
   overflow-y: scroll;
 }
 ::-webkit-scrollbar{
@@ -330,7 +329,8 @@ div.chart {
   font-weight: bold;
   white-space: nowrap;
   margin-bottom: 8px;
-  margin-right: 10px;
+  margin-right: 15px;
+  text-align: justify;
 }
 .type {
   width: 100%;
@@ -473,6 +473,11 @@ div.chart {
   width: 100%;
   float: right;
 }
+
+
+#color_block {
+
+}
 #color_block li {
   display: inline-block;
 }
@@ -500,25 +505,6 @@ div.chart {
 .block_3{
   background:red;
 }
-.notifi{
-  display: none;
-}
-.control-section{
-    margin: 8px;
-    background-color: #b8b8b8;
-    padding: 20px;
-    justify-content: center;
-    visibility: visible;
-}
-.control-section button{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    width: 120px;
-    height: 80px!important;
-    justify-content: center;
-    align-items: center;
-}
 
 /* Rounded sliders */
 /* .slider.round {
@@ -529,62 +515,3 @@ div.chart {
   border-radius: 50%;
 } */
 
-@media only screen and (max-width: 1458px) and (min-width: 768px) {
-  .chart-monitor{
-    width: 75%;
-    padding:0;
-  }
-  .monitor{
-    width: 200px;
-  }
-  .control-section button{
-    transform: scale(0.8);
-  }
-}
-@media only screen and (max-width: 840px) {
-  .statusbar{
-    margin-top: 40px;
-  }
-  .header{
-    height: 120px;
-    align-items: flex-start;
-  }
-}
-@media only screen and (max-width: 560px) {
-  .statusbar{
-    margin-top: 80px;
-  }
-  .header{
-    height: 160px;
-    align-items: flex-start;
-  }
-}
-@media only screen and (max-width: 1458px) {
-  .col-md-2{
-    width: 25% !important;
-  }
-  .col-md-8{
-    width: 50% !important;
-  }
-  .list .item .rside div{
-    transform: scale(0.8, 0.8);
-    -ms-transform: scale(0.8, 0.8); /* IE 9 */
-    -webkit-transform: scale(0.8, 0.8); /* Safari and Chrome */
-    -o-transform: scale(0.8, 0.8); /* Opera */
-    -moz-transform: scale(0.8, 0.8); /* Firefox */
-    padding: 0;
-    white-space: pre-wrap;
-  }
-  .list .item .type{
-    margin: 0;
-    top: 0;
-    right: inherit;
-    position: relative;
-  }
-  .list .item .date{
-    bottom: -5px;
-  }
-}
-#cpu .c3-line-Lần-đo-1, #cpu .c3-line-Lần-đo-2, #cpu .c3-line-Lần-đo-3{
-  stroke-width: 2px;
-}
