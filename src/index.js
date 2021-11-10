@@ -11,16 +11,25 @@ const path = require('path');
 const wifi = require('node-wifi');
 const { string } = require('joi');
 const homeController = require('./controllers/home.controller');
+const { exec } = require('child_process');
 
 wifi.init({ iface: null });
 
 let serverHTTP;
 var objectData;
 
-serverHTTP = server.listen(config.port, () => {
-  logger.info(`Listening to port ${config.port}`);
-});
+serverHTTP = server.listen(config.port, ExecuteChromium);
 
+
+function ExecuteChromium () {
+  exec("chromium-browser --kiosk http://localhost:3000/v1", function(err, stdout, stderr){
+    console.log("stdout: " + stdout);
+    console.log("stderr: " + stderr);
+    if (err !== null) {
+      console.log("exec error: "+ error);
+    }
+  });
+}
 const exitHandler = () => {
   if (serverHTTP) {
     serverHTTP.close(() => {
